@@ -17,4 +17,8 @@ def create_app():
     # Функции представления
     app.add_url_rule("/", view_func=views.index_page)
 
+    app.config["SECRET_KEY"] = "secret"
+    app.add_url_rule("/login/", view_func=views.login_page, methods=["GET", "POST"])
+    app.add_url_rule("/logout/", view_func=views.logout)
+
     return app
