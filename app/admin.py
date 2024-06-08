@@ -6,3 +6,5 @@ admin = Admin()
 
 class StudentModelView(ModelView):
     pass
+class GroupModelView(ModelView):
+    pass

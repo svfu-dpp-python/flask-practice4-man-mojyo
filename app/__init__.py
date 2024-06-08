@@ -1,5 +1,5 @@
 from flask import Flask
-from .admin import admin, StudentModelView
+from .admin import admin, StudentModelView,GroupModelView
 from .models import db, migrate
 from . import views
 
@@ -22,4 +22,5 @@ def create_app():
     app.add_url_rule("/logout/", view_func=views.logout)
     admin.init_app(app)
     admin.add_view(StudentModelView(models.Student, db.session))
+    admin.add_view(GroupModelView(models.Group, db.session))
     return app
