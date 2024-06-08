@@ -2,12 +2,15 @@
 
 {% block content %}
 <div class="menu">
+    <a href="{{ url_for('admin.index') }}">Админка</a>
     {% if 'username' in session %}
     <span>{{ session['username'] }}</span>
+    
     <a href="{{ url_for('logout') }}">Выход</a>
     {% else %}
     <a href="{{ url_for('login_page') }}">Вход</a>
     {% endif %}
 </div>
+
 <h1>Добро пожаловать!</h1>
 {% endblock %}
